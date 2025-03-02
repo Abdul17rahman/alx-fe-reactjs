@@ -2,8 +2,8 @@ import { useRecipeStore } from "./recipeStore";
 
 const EditRecipeForm = () => {
   const { recipe, updateRecipe } = useRecipeStore();
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     updateRecipe({ ...recipe, title, description });
   };
 
