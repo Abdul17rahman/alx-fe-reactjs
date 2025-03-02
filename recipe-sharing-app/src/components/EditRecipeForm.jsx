@@ -1,13 +1,10 @@
-import { useState } from "react";
+import { useRecipeStore } from "./recipeStore";
 
-const EditRecipeForm = ({ recipe, updateRecipe }) => {
-  const [title, setTitle] = useState(recipe.title);
-  const [description, setDescription] = useState(recipe.description);
-
+const EditRecipeForm = () => {
+  const { recipe, updateRecipe } = useRecipeStore();
   const handleSubmit = (e) => {
     e.preventDefault();
     updateRecipe({ ...recipe, title, description });
-    alert("Recipe updated successfully!");
   };
 
   return (
