@@ -1,7 +1,11 @@
 import { useRecipeStore } from "./recipeStore";
 
-const EditRecipeForm = () => {
-  const { recipe, updateRecipe } = useRecipeStore();
+const EditRecipeForm = ({ recipeId }) => {
+  const recipe = useRecipeStore((state) =>
+    state.recipes.find((recipe) => recipe.id === recipeId)
+  );
+
+  const { updateRecipe } = useRecipeStore();
   const handleSubmit = (event) => {
     event.preventDefault();
     updateRecipe({ ...recipe, title, description });
