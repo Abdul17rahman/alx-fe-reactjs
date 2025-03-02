@@ -12,7 +12,7 @@ const RecipeDetails = ({ recipeId }) => {
     <div>
       <h1>{recipe.title}</h1>
       <p>{recipe.description}</p>
-
+      <EditRecipeForm recipe={recipe} updateRecipe={updateRecipe} />
       <button onClick={deleteRecipe(recipeId)}>Delete</button>
     </div>
   );
