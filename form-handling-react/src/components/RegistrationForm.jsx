@@ -18,8 +18,20 @@ export default function RegistrationForm() {
     }
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (
+      !e.target["username"].value ||
+      !e.target["username"].value ||
+      !e.target["username"].value
+    ) {
+      console.error("Empty fields");
+      return;
+    }
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="username">Username: </label>
       <input
         type="text"
@@ -38,6 +50,7 @@ export default function RegistrationForm() {
         name="password"
         onChange={handleChange}
       />
+      <button type="submit">Submit</button>
     </form>
   );
 }
