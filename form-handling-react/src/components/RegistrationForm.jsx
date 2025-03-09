@@ -33,7 +33,7 @@ export default function RegistrationForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} method="post">
       <label htmlFor="username">Username: </label>
       <input
         type="text"
