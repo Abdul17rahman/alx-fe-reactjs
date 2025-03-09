@@ -4,7 +4,7 @@ export default function RegistrationForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setErrors] = useState("");
 
   function handleChange(e) {
     e.preventDefault();
@@ -22,13 +22,13 @@ export default function RegistrationForm() {
   function handleSubmit(e) {
     e.preventDefault();
     if (!username) {
-      setError("no username");
+      setErrors("no username");
     }
     if (!email) {
-      setError("No email");
+      setErrors("No email");
     }
     if (!password) {
-      setError("No password");
+      setErrors("No password");
     }
   }
 
