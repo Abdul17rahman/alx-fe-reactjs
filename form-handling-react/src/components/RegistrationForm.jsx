@@ -4,6 +4,7 @@ export default function RegistrationForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   function handleChange(e) {
     e.preventDefault();
@@ -20,13 +21,14 @@ export default function RegistrationForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (
-      !e.target["username"].value ||
-      !e.target["username"].value ||
-      !e.target["username"].value
-    ) {
-      console.error("Empty fields");
-      return;
+    if (!username) {
+      setError("no username");
+    }
+    if (!email) {
+      setError("No email");
+    }
+    if (!password) {
+      setError("No password");
     }
   }
 
