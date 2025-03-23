@@ -12,7 +12,7 @@ export default function HomePage() {
       <h1 className="text-red-300 rounded-lg shadow-lg hover:text-blue-500">
         Home Page
       </h1>
-      <ul>
+      <ul className="grid grid-cols-1 grid-cols-2 grid-cols-3 sm md">
         {recipe.map((r) => (
           <li key={r.id}>{r.title}</li>
         ))}
